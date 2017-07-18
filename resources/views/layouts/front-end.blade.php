@@ -19,20 +19,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flag-icon.min.css') }}">
 
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.nato.activisme.be" />
-    <meta property="og:title" content="@lang('social.meta_facebook_title')" />
-    <meta property="og:image" content="{{ asset('assets/img/front.jpg') }}" />
-    <meta property="og:description" content="@lang('social.meta_facebook_discription')">
-    <meta property='article:publisher' content='https://www.facebook.com/ActivismeBE' />
-
-
-    {{-- Twitter card --}}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@Activisme_be" />
-    <meta name="twitter:title" content="@lang('social.meta_twitter_title')" />
-    <meta name="twitter:description" content="@lang('meta_twitter_description')" />
-    <meta name="twitter:image" content="{{ asset('img/front.jpg') }}" />
+    @stack('twitter-cards')       {{-- SEO --}}
+    @stack('facebook-open-graph') {{-- SEO --}}
 </head>
 <body>
 <div id="app">

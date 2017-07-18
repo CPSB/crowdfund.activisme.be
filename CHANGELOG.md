@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - #30: Fix bugs in the appleication routes.
 - #38: Implementation for the patch log
 - #13: Add error pages 
+- #46 Aanpassing middleware role. 
 
 ## [1.0. - Initial release
 - First version form our project skeleton.
