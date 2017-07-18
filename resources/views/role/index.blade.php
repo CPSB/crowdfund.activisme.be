@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }} {{-- Submit form button --}}
-                    <button type="button" class="btn btn-default" data-dissmiss="modal">Close</button>
+                    {{ Form::submit('Submit', ['class' => 'btn btn-success']) }} {{-- Submit form button --}}
+                    <button type="button" class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</button>
                 </div>
                 {{ Form::close() }}
             </div>
