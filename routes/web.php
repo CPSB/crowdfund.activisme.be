@@ -39,7 +39,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('notifications/index', 'NotificationsController@index')->name('notifications.index');
 });
 
-Route::get('backers', 'backersController@index')->name('backers');
+Route::get('backers', 'BackersController@index')->name('backers');
+Route::get('backers/transaction/delete/{id}', 'BackersController@destroy')->name('backers.transaction.delete');
 
 Route::get('updates/create', 'UpdatesController@create')->name('updates.create');
 Route::get('updates/delete/{id}', 'UpdatesController@destroy')->name('updates.destroy');

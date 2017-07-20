@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Finance;
 use App\Http\Requests\Backersvalidator;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class BackersController extends Controller
@@ -31,8 +32,24 @@ class BackersController extends Controller
 
     }
 
+    /**
+     * Delete a transaction in the system.
+     *
+     *
+     */
     public function destroy($id)
     {
+        try {
+            $transaction = Finance::findOrFail($id);
 
+            if ($transaction->delete()) {
+                flash('De transactie is verwijderd')->success();
+            }
+
+            return redirect()->route('backers');
+        } catch (ModelNotFoundException $exception) {
+            flash('Wij konden de transactie niet vinden.')->error();
+            return redirect()->route('backers');
+        }
     }
 }
