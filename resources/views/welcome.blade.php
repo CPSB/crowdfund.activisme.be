@@ -51,11 +51,13 @@
                     <h2>10,350€</h2>
                     <span class="contribution">opgehaald door <strong>{{ $backers->count() }}</strong> personen.</span>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                            <span class="sr-only">45% Complete</span>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="{{ config('platform.needed-money') }}" style="width: {{ $percent }}%;">
+                            <span class="sr-only">{{ number_format($percent, 2)}}% Compleet</span>
                         </div>
                     </div>
-                    <span class="goal-progress"><strong>45%</strong> opgehaald van de {{ config('platform.needed-money') }}€</span>
+                    <span class="goal-progress">
+                        <strong>{{ number_format($percent, 2)}}%</strong> opgehaald van de {{ config('platform.needed-money') }}€
+                    </span>
                 </div>
                 <span class="count-down"><strong>27</strong>dagen te gaan.</span>
             </div>
@@ -94,12 +96,10 @@
                     <ul class="list-inline">
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fa fa-git"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                    <!--/social links-->
-                    <a href="#" class="btn btn-contact"><i class="fa fa-envelope"></i>CONTACT US</a>
                 </div>
             </div>
         </div>

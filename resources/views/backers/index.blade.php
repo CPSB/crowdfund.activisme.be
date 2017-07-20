@@ -14,7 +14,19 @@
                 </div>
 
                 <div class="panel-body">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="all">
+                            @include('backers.tabs.all-transactions')
+                        </div>
 
+                        <div role="tabpanel" class="tab-pane fade in" id="vredescaravan">
+                            @include('backers.tabs.vredescaravan-transactions')
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade in" id="activisme">
+                            @include('backers.tabs.activisme-transactions')                       
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> {{-- /Content --}}
@@ -31,15 +43,15 @@
             </div>
 
             <div class="list-group">
-                <a class="list-group-item">
+                <a class="list-group-item" href="#all" aria-controls="all" role="tab" data-toggle="tab">
                     <span class="fa fa-asterisk" aria-hidden="true"></span> Alle transacties
                 </a>
 
-                <a href="" class="list-group-item">
+                <a class="list-group-item" href="#vredescaravan" aria-controls="vredescaravan" role="tab" data-toggle="tab">
                     <span class="fa fa-asterisk" aria-hidden="true"></span> Transacties vredescaravan
                 </a>
 
-                <a href="" class="list-group-item">
+                <a class="list-group-item" href="#activisme" aria-controls="activisme" role="tab" data-toggle="tab">
                     <span class="fa fa-asterisk" aria-hidden="true"></span> Transacties Activisme
                 </a>
             </div>

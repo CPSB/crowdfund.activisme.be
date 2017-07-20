@@ -42,6 +42,7 @@ class HomeController extends Controller
     {
         $data['updates'] = Updates::all();
         $data['backers'] = Finance::where('type', 'inkomsten');
+        $data['percent'] = ($data['backers']->sum('amount') / config('platform.needed-money')) * 100;
 
         return view('welcome', $data);
     }
