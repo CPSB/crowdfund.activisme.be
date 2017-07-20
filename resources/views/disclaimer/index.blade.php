@@ -1,16 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.front-end')
 
-@section('title', 'Disclaimer')
+@section('title', 'Activisme_BE crowdfund')
 
 @section('content')
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div style="margin-top: -20px;" class="page-header">
-                        <h2 style="margin-bottom: -5px;">Disclaimer &amp; Privacy</h2>
-                    </div>
-
+        <div class="content col-md-8 col-sm-12 col-xs-12">
+            <div class="section-block">
+                <div class="funding-meta">
+                    <h1>Disclaimer & Privacy</h1>
                     <p>
                         Deze website is eigendom van <a href="http://www.activisme.be">ActivismeBE</a>.
                         Door de toegang tot en het gebruik van deze website verklaart u zich uitdrukkelijk akkoord met de volgende algemene voorwaarden.
@@ -109,25 +106,25 @@
                 </div>
             </div>
         </div>
-    </div>
-@endsection
-
-@section('footer')
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-4">
-                    <p>© {{ date('Y') }} - ActivismeBE</p>
-                </div>
-
-                <div class="col-md-6 col-sm-8">
-                    <ul class="bottom_ul">
-                        <li><a href="http://www.activisme.be">ActivismeBE</a></li>
-                        <li><a href="https://www.vrede.be/">Vrede.be</a></li>
-                        <li><a href="https://stopnato2017.org/">StopNATO2017</a></li>
+        <!--/main content-->
+        <!--sidebar-->
+        <div class="content col-md-4 col-sm-12 col-xs-12">
+            <div class="section-block summary">
+                <h1 class="section-title">CONTACT</h1>
+                <div class="profile-contents">
+                    <!--social links-->
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-git"></i></a></li>
                     </ul>
+                    <!--/social links-->
+                    <a href="#" class="btn btn-contact"><i class="fa fa-envelope"></i>CONTACT US</a>
                 </div>
             </div>
         </div>
+        <!--/sidebar-->
     </div>
 @endsection

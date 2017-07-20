@@ -38,6 +38,12 @@
                         {{-- Left Side Of Navbar --}}
                         <ul class="nav navbar-nav">
                             @if (Auth::check())
+                                <li @if (Request::is('updates*') || Request::is('home*')) class="active" @endif>
+                                    <a href="{{ route('home') }}">
+                                        <span class="fa fa-file-text-o"></span> Updates
+                                    </a>
+                                </li>
+
                                 @if (auth()->check() && auth()->user()->hasRole('Admin'))
                                      <li class="dropdown">
                                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -61,14 +67,14 @@
                                             @endcan
                                         </ul>
                                     </li>
+
+                                    <li @if (Request::is('backers*')) class="active" @endif>
+                                        <a href="{{ route('backers') }}">
+                                            <span class="fa fa-money" aria-hidden="true"></span> Financieel blad
+                                        </a>
+                                    </li>
                                 @endif
                             @endif
-
-                            <li class="{{ Request::is('disclaimer*') ? 'active' : '' }}">
-                                <a href="{{ route('disclaimer.index') }}">
-                                    <span class="fa fa-legal" aria-hidden="true"></span> Disclaimer
-                                </a>
-                            </li>
 
                             <li class="{{ Request::is('contact*') ? 'active' : '' }} {{ Request::is('backend/contact*') ? 'active' : '' }}">
                                 @if (auth()->check() && auth()->user()->hasRole('Admin'))
@@ -81,18 +87,6 @@
 
                         {{-- Right Side Of Navbar --}}
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Taal: NL <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li><a href="?lang=nl"><span class="flag-icon flag-icon-be"></span> Nederlands</a></li>
-                                    <li><a href="?lang=en"><span class="flag-icon flag-icon-gb"></span> Engels</a></li>
-                                    <li><a href="?lang=fr"><span class="flag-icon flag-icon-fr"></span> Frans</a></li>
-                                </ul>
-                            </li>
-
                             {{-- Authentication Links --}}
                             @if (Auth::guest())
                                 <li class="dropdown">

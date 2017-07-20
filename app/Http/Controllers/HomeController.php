@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Countries;
+use App\Updates;
 use Illuminate\Http\Request;
 
 /**
@@ -24,8 +25,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('banned')->only(['backend']);
-        $this->middleware('auth')->only(['backend']);
+        $routes = ['backend'];
+
+        $this->middleware('banned')->only($routes);
+        $this->middleware('role:Admin')->only($routes);
         $this->middleware('lang');
     }
 
@@ -36,8 +39,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $countries = new Countries;
-        return view('welcome', compact('countries'));
+        $data['updates'] = Updates::all();
+        return view('welcome', $data);
     }
 
     /**
@@ -47,6 +50,7 @@ class HomeController extends Controller
      */
     public function backend()
     {
-        return view('home');
+        $data['updates'] = Updates::with('author')->paginate(15);
+        return view('home', $data);
     }
 }
