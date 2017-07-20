@@ -48,8 +48,6 @@ class BackersController extends Controller
     /**
      * Create view for a new transaction.
      *
-     * @todo Register route.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -59,8 +57,6 @@ class BackersController extends Controller
 
     /**
      * Store a transaction inthe system.
-     *
-     * @todo Register route.
      *
      * @param  Backersvalidator $input
      * @param  \App\Finance      $finance

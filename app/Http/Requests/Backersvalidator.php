@@ -24,7 +24,10 @@ class Backersvalidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'type'          => 'required', 
+            'finance_plan'  => 'required', 
+            'uitvoerder'    => 'required',
+            'amount'        => 'required',
         ];
     }
 }
