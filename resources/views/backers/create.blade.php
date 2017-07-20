@@ -9,7 +9,7 @@
                 </div>
                 
                 <div class="panel-body">
-                    <form method="post" action="" class="form-horizontal">
+                    <form method="post" action="{{ route('backers.transaction.store') }}" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <div class="form-group">

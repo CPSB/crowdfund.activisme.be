@@ -70,6 +70,8 @@ class BackersController extends Controller
     {
         $input->merge(['creator_id' => auth()->user()->id]);
 
+        dd($input->all());
+
         if ($finance->create($input->except(['_token']))) { // Transaction has been stored.
             flash('De transactie is opgeslagen in het systeem.');
         }
