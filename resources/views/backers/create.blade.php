@@ -27,6 +27,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="control-label col-md-3">
+                                Bestemming: <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <select name="finance_plan" class="form-control">
+                                    <option value="">-- Selecteer transactie bestemming --</option>
+                                    <option value="vredescaravan">Vredescaravan</option>
+                                    <option value="activisme">Activisme werking</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-3 control-label">
                                 Uitgevoerd door: <span class="text-danger">*</span>
                             </label>

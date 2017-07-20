@@ -15,10 +15,11 @@ class CreateFinancesTable extends Migration
     {
         Schema::create('finances', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('creator_id');
             $table->string('type');
             $table->string('finance_plan');
             $table->float('amount');
-            $table->text('note');
+            $table->text('extra_informatie');
             $table->timestamps();
         });
     }
