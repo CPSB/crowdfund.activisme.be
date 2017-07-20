@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Countries;
 use App\Updates;
+use App\Finance;
 use Illuminate\Http\Request;
 
 /**
@@ -40,6 +41,8 @@ class HomeController extends Controller
     public function index()
     {
         $data['updates'] = Updates::all();
+        $data['backers'] = Finance::where('type', 'inkomsten');
+
         return view('welcome', $data);
     }
 

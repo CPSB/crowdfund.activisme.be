@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="unititled">
-    <meta name="keywords" content="HTML5 Crowdfunding Profile Template">
-    <meta name="author" content="Audain Designs">
+    <meta name="description" content="Een crowdfund voor de vredescaravan en de werking van ActivismeBE">
+    <meta name="keywords" content="Activisme Crowdfund Armoede Caravan">
+    <meta name="author" content="Activisme_BE">
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <title>@yield('title')</title>
@@ -37,12 +37,12 @@
         <div class="row">
             <div class="goal-summary pull-left">
                 <div class="backers">
-                    <h3>5234</h3>
+                    <h3>{{ $backers->count() }}</h3>
                     <span>bijdrages</span>
                 </div>
                 <div class="funded">
-                    <h3>$10,350</h3>
-                    <span>opgehaald van de $23,000</span>
+                    <h3>{{ $backers->sum('amount') }}€</h3>
+                    <span>opgehaald van de {{ config('platform.needed-money') }}€</span>
                 </div>
                 <div class="time-left">
                     <h3>27</h3>

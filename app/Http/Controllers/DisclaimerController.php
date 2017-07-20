@@ -33,6 +33,7 @@ class DisclaimerController extends Controller
      */
     public function index()
     {
-        return view('disclaimer.index');
+        $data['backers']  = Finance::where('type', 'inkomsten');
+        return view('disclaimer.index', $data);
     }
 }

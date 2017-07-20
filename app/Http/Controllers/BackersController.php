@@ -64,9 +64,9 @@ class BackersController extends Controller
      */
     public function store(Backersvalidator $input, Finance $finance)
     {
-        $input->merge(['creator_id' => auth()->user()->id]);
-
-        dd($input->all());
+        $input->merge([
+            'creator_id' => auth()->user()->id, 'amount' => str_replace(',', '.', $input->amount)
+        ]);
 
         if ($finance->create($input->except(['_token']))) { // Transaction has been stored.
             flash('De transactie is opgeslagen in het systeem.');
