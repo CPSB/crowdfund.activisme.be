@@ -38,6 +38,9 @@ class BackersController extends Controller
         $data['vredesCaravan']   = $finance->where('finance_plan', 'vredescaravan')->paginate(25);
         $data['activisme']       = $finance->where('finance_plan', 'activisme')->paginate(25);
 
+        $data['income']  = $finance->where('type', 'inkomsten')->sum('amount');
+        $data['outcome'] = $finance->where('type', 'uitgaven')->sum('amount');
+
         return view('backers.index', $data);
     }
 
@@ -51,7 +54,7 @@ class BackersController extends Controller
      */
     public function create()
     {
-        return view('backers.create', $data);
+        return view('backers.create');
     }
 
     /**
@@ -60,8 +63,8 @@ class BackersController extends Controller
      * @todo Register route.
      *
      * @param  Backersvalidator $input
-     * @param  App\Finance      $finance
-     * @return Illuminate\Http\Response
+     * @param  \App\Finance      $finance
+     * @return \Illuminate\Http\Response
      */
     public function store(Backersvalidator $input, Finance $finance)
     {
@@ -78,7 +81,7 @@ class BackersController extends Controller
      * Delete a transaction in the system.
      *
      * @param  integer $id The id for the transaction in the database.
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

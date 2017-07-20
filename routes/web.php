@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::get('backers', 'BackersController@index')->name('backers');
 Route::get('backers/transaction/delete/{id}', 'BackersController@destroy')->name('backers.transaction.delete');
+Route::get('backers/create', 'BackersController@create')->name('backers.transaction.create');
 
 Route::get('updates/create', 'UpdatesController@create')->name('updates.create');
 Route::get('updates/delete/{id}', 'UpdatesController@destroy')->name('updates.destroy');

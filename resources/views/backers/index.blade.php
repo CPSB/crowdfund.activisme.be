@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Transactie overzicht
-                    <a href="" class="pull-right btn btn-xs btn-success">
+                    <a href="{{ route('backers.transaction.create') }}" class="pull-right btn btn-xs btn-success">
                         <span class="fa fa-plus" aria-hidden="true"></span> Transactie toevoegen
                     </a>
                 </div>
@@ -22,7 +22,11 @@
         <div class="col-md-3">
             <div class="list-group">
                 <div class="list-group-item">
-                    Totaal in kas: <span class="pull-right"><strong class="text-danger">0000€</strong></span>
+                    @php($total = $income - $outcome)
+                    Totaal in kas:
+                    <span class="pull-right">
+                        <strong class="@if ($total < 0) text-danger @else text-success @endif">{{ $total }}€</strong>
+                    </span>
                 </div>
             </div>
 
