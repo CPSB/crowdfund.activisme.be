@@ -44,6 +44,10 @@
 
         <div class="col-md-3"> {{-- Sidebar --}} 
             <div class="list-group">
+                <a href="{{ route('backers') }}" class="list-group-item">
+                    <span class="fa fa-undo" aria-hidden="true"></span> Terug naar overzichten.</span>
+                </a>
+
                 <a href="{{ route('backers.transaction.delete', $transaction) }}" class="list-group-item list-group-item-danger">
                     <span class="fa fa-trash" aria-hidden="true"></span> Verwijder transactie.
                 </a>
