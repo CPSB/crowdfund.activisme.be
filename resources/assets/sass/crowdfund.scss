@@ -1,0 +1,581 @@
+//
+// Temlate Name: Launch
+// Version: 1.0
+// Author: Justin Audain
+// License: Creative Commons Attribution 3.0 License
+// Website: http://themes.audaindesigns.com
+//
+
+//- Variables -//
+$palette-white:                   #fff;
+$palette-white-2:                 #f7f7f7;
+$palette-base:                    #B9210C;
+$palette-reward:                  #2ed9ea;
+$palette-follow:                  #81a8f1;
+$palette-light-gray:              darken($palette-base, 11.37254902%);
+$palette-gray:                    #a7a7a7;
+$palette-light:                   lighten($palette-base, 31.56862745%);
+$palette-darker:                  darken($palette-base, 6.47058824%);
+$palette-darken:                  darken($palette-base, 13.52941176%);
+
+$color-standard-1:                $palette-white;
+$color-standard-2:                $palette-base;
+$color-standard-3:                $palette-gray;
+$color-standard-4:                $palette-darken;
+$color-standard-5:                $palette-white-2;
+
+$color-paragraph:                 $palette-gray;
+$color-hyperlink:                 $palette-darken;
+
+$color-reward-block-title:        $palette-base;
+
+$border-color-header:             $palette-darken;
+
+$color-goal-summary:              $palette-darken;
+$color-reward-block-popular:      $palette-reward;
+
+$color-button-contact-hover:      $palette-darker;
+$color-button-follow:             $palette-follow;
+
+$color-tab-border:                #e2e2e2;
+
+$background-color-2:              #ecebeb;
+$background-color-1:              $palette-white;
+$background-color-3:              $palette-base;
+$background-color-4:              $palette-darken;
+$background-color-5:              $palette-white-2;
+$background-color-6:              $palette-darken;
+$background-color-7:              $palette-light;
+$background-color-8:              #fdfdfd;
+
+//- Base -//
+body {
+  background-color: $background-color-2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  color: $color-paragraph;
+}
+
+a {
+  color: $color-hyperlink;
+}
+
+//- Header -//
+.header {
+  background-color: $background-color-3;
+  border-bottom: 5px solid $border-color-header;
+  padding: 30px 0;
+}
+
+.goal-summary {
+  padding: 0 40px;
+}
+
+.goal-summary .backers,
+.goal-summary .funded,
+.goal-summary .time-left,
+.goal-summary .reminder {
+  border-right: 1px solid rgba(255, 255, 255, .39);
+  display: inline-block;
+  margin: 10px 20px 10px 0;
+  padding-right: 20px;
+}
+
+//scss-lint:disable MergeableSelector
+.goal-summary .reminder.last {
+  border: 0;
+}
+
+.goal-summary .backers h3,
+.goal-summary .funded h3,
+.goal-summary .time-left h3 {
+  background-color: $background-color-1;
+  border-radius: 4px;
+  color: $color-goal-summary;
+  display: table;
+  margin: 0 0 5px;
+  padding: 5px;
+}
+
+.goal-summary .backers span,
+.goal-summary .funded span,
+.goal-summary .time-left span {
+  color: $color-standard-1;
+}
+
+.goal-summary .reminder a {
+  background-color: $background-color-1;
+  border-radius: 4px;
+  display: table;
+  margin: 0 0 10px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.goal-summary .reminder a:hover,
+.goal-summary .reminder a:focus {
+  background-color: $background-color-4;
+  color: $color-standard-1;
+}
+
+@media (max-width: 767px) {
+  .goal-summary {
+    padding: 0 40px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .goal-summary {
+    padding: 0;
+  }
+}
+
+//- Section Blocks -//
+.section-block {
+  background-color: $background-color-5;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.section-block.summary {
+  background-color: $background-color-3;
+}
+
+.section-block.summary h1 {
+  color: $color-standard-1;
+  display: block;
+  text-align: center;
+}
+
+.section-block.transparent {
+  background-color: transparent;
+}
+
+.section-block.signup {
+  background-color: $background-color-3;
+}
+
+.section-block h1 {
+  margin-top: 0;
+}
+
+.section-title {
+  border-radius: 4px;
+  color: $color-standard-2;
+  display: table;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+//- Main Content -//
+.main-content {
+  padding: 40px 0;
+}
+
+//- Profile Summary -//
+.profile-contents {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-contents h2 {
+  color: $color-standard-1;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  max-height: 180px;
+}
+
+.profile-contents ul li {
+  margin: 5px;
+  padding: 0;
+}
+
+// scss-lint:disable SelectorDepth VendorPrefix QualifyingElement
+.profile-contents ul li a {
+  background-color: $background-color-4;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: $color-standard-1;
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  width: 40px;
+
+  i.fa {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}
+
+.profile-contents ul li a:hover {
+  background-color: $background-color-6;
+}
+
+//- Funding Meta -//
+// scss-lint:disable EmptyRule
+.funding-meta {
+}
+
+.funding-meta h1 {
+  background: $background-color-3;
+  border-radius: 4px;
+  color: $color-standard-1;
+  display: table;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.type-meta {
+  color: $color-standard-3;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 10px 10px 0;
+
+  i.fa {
+    color: $color-standard-2;
+    margin-right: 5px;
+  }
+}
+
+.funding-meta h2 {
+  font-weight: 700;
+}
+
+.funding-meta p {
+  color: $color-standard-3;
+  margin: 30px 0 10px;
+}
+
+.video-frame {
+  display: block;
+  height: 0;
+  padding-bottom: 56.25%; // 16:9
+  padding-top: 25px;
+  position: relative;
+}
+
+.video-frame iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.funding-meta h2,
+.funding-meta span.contribution {
+  color: $color-standard-4;
+  display: inline-block;
+}
+
+.funding-meta span.contribution,
+.funding-meta span.goal-progress {
+  color: $color-standard-3;
+}
+
+.funding-meta span.goal-progress {
+  display: block;
+  text-align: right;
+}
+
+.count-down {
+  color: $color-standard-3;
+  display: block;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.count-down strong {
+  padding-right: 5px;
+}
+
+.progress-bar {
+  background-color: $background-color-3;
+  box-shadow: none;
+}
+
+.progress {
+  background-color: $background-color-2;
+  box-shadow: none;
+  height: 30px;
+  margin: 10px 0;
+}
+
+//- Rewards -//
+.reward-block {
+  background-color: $background-color-1;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.reward-block:hover {
+  background-color: $background-color-7;
+}
+
+.reward-block.last {
+  margin-bottom: 0;
+}
+
+.reward-block h3 {
+  background: $background-color-3;
+  border-radius: 4px;
+  color: $color-standard-1;
+  display: table;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  padding: 10px;
+}
+
+.reward-block h2 {
+  color: $color-reward-block-title;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 15px 0;
+}
+
+.reward-block i.fa {
+  color: $color-standard-2;
+}
+
+.reward-block span {
+  color: $color-standard-3;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.reward-block.popular:after {
+  background-color: $color-reward-block-popular;
+  border-radius: 4px;
+  color: $color-standard-1;
+  content: 'popular';
+  font-weight: 700;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  text-transform: uppercase;
+  top: 10px;
+}
+
+//- Sign up form -//
+.sign-up-form {
+  text-align: center;
+}
+
+.sign-up-form p {
+  color: $color-standard-1;
+  font-weight: 700;
+}
+
+.signup-input {
+  border: 0;
+  border-radius: 4px;
+  max-width: 400px;
+  padding: 10px;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .signup-input {
+    max-width: 100%;
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sign-up-form .btn.btn-signup {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+
+//-Tabs- //
+.nav-tabs {
+  border: 0;
+}
+
+// scss-lint:disable QualifyingElement
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  background-color: $background-color-3;
+  border: 0;
+  border-radius: 4px;
+  color: $color-standard-1;
+  font-weight: 700;
+}
+
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover {
+  border: 0;
+  color: $color-standard-3;
+  margin-right: 10px;
+}
+
+.tab-content .section-title {
+  border-bottom: 1px solid $color-tab-border;
+  display: block;
+  margin-bottom: 20px;
+}
+
+//- Updates -//
+.update-post {
+  background-color: $background-color-8;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.update-post .update-title {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.update-post .update-date {
+  color: $color-standard-3;
+  display: block;
+  font-size: 12px;
+  margin: 0 0 15px;
+}
+
+//- Buttons -//
+.btn {
+  border: 0;
+}
+
+.btn.btn-launch {
+  background-color: $background-color-3;
+  color: $color-standard-1;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 10px 25px;
+}
+
+.btn.btn-launch:hover,
+.btn.btn-launch:focus,
+.btn.btn-reward,
+.btn.btn-reward:hover,
+.btn.btn-reward :focus {
+  background-color: $background-color-4;
+  box-shadow: none;
+}
+
+.btn.btn-reward {
+  background-color: $background-color-3;
+  color: $color-standard-1;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+
+.btn.btn-signup {
+  background-color: $background-color-3;
+  border: 2px solid $color-standard-1;
+  color: $color-standard-1;
+  height: 40px;
+  margin-left: 10px;
+  text-align: center;
+  width: 43px;
+}
+
+.btn.btn-contact {
+  background-color: $background-color-4;
+  color: $color-standard-1;
+  font-weight: 700;
+}
+
+.btn.btn-contact:hover,
+.btn.btn-contact:focus {
+  background-color: $color-button-contact-hover;
+}
+
+.btn.btn-contact i.fa {
+  margin-right: 10px;
+}
+
+.btn.btn-follow {
+  background-color: $color-button-follow;
+  color: $color-standard-1;
+  margin-bottom: 10px;
+}
+
+.btn.btn-download {
+  background-color: $background-color-4;
+  color: $color-standard-1;
+}
+
+//- Credits -//
+.credit-block {
+  background-color: $background-color-1;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.credit-block.sources a {
+  display: block;
+  margin: 10px 0;
+}
+
+// scss-lint:disable QualifyingElement
+.credit-block.license a.lined {
+  text-decoration: underline;
+}
+
+// scss-lint:disable QualifyingElement
+.credit-block i.fa {
+  padding-right: 10px;
+}
+
+//- Footer -//
+.footer {
+  background-color: $background-color-4;
+  padding: 10px;
+  text-align: center;
+}
+
+.copyright {
+  color: $color-standard-5;
+}
+
+.copyright a {
+  background: $color-standard-1;
+  border-radius: 4px;
+  color: $color-standard-4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-left: 4px;
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+
+//- Overrides -//
+.btn,
+input {
+  outline: none;
+}
