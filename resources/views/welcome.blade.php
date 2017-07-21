@@ -59,7 +59,7 @@
                         <strong>{{ number_format($percent, 2)}}%</strong> opgehaald van de {{ config('platform.needed-money') }}€
                     </span>
                 </div>
-                <span class="count-down"><strong>27</strong>dagen te gaan.</span>
+                <span class="count-down"><strong>{{ $daysLeft }}</strong>dagen te gaan.</span>
             </div>
             <!--tabs-->
             <div class="section-block">

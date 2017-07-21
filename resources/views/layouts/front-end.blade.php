@@ -45,7 +45,7 @@
                     <span>opgehaald van de {{ config('platform.needed-money') }}€</span>
                 </div>
                 <div class="time-left">
-                    <h3>27</h3>
+                    <h3>{{ $daysLeft }}</h3>
                     <span>dagen te gaan</span>
                 </div>
                 <div class="reminder last">
