@@ -49,7 +49,15 @@
                     </p>
 
                     <h2>10,350€</h2>
-                    <span class="contribution">opgehaald door <strong>{{ $backers->count() }}</strong> personen.</span>
+                    <span class="contribution">
+                        opgehaald door <strong>{{ $backers->count() }}</strong>
+
+                        @if ($backers->count() === 1)
+                            persoon
+                        @else
+                            <span>personen</span>
+                        @endif
+                    </span>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="{{ config('platform.needed-money') }}" style="width: {{ $percent }}%;">
                             <span class="sr-only">{{ number_format($percent, 2)}}% Compleet</span>

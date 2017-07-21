@@ -38,7 +38,12 @@
             <div class="goal-summary pull-left">
                 <div class="backers">
                     <h3>{{ $backers->count() }}</h3>
-                    <span>bijdrages</span>
+                    
+                    @if ($backers->count() === 1)
+                        bijdrage
+                    @else
+                        <span>bijdrages</span>
+                    @endif
                 </div>
                 <div class="funded">
                     <h3>{{ $backers->sum('amount') }}€</h3>
