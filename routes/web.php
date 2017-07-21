@@ -14,20 +14,12 @@
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@backend')->name('home');
 
-Route::resource('contact', 'ContactController');
 Route::resource('disclaimer', 'DisclaimerController');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/settings', 'AccountSettingsController@index')->name('settings.index');
     Route::post('/settings/info', 'AccountSettingsController@updateInfo')->name('settings.info');
     Route::post('/settings/password', 'AccountSettingsController@updateSecurity')->name('settings.security');
-
-    Route::resource('backend/contact', 'ContactBackendController', ['names' => [
-        'index'   => 'contact.backend.index',
-        'show'    => 'contact.backend.show',
-        'store'   => 'contact.backend.store',
-        'destroy' => 'contact.backend.destroy'
-    ]]);
 
     Route::get('/users/ban/{id}', 'UserController@block')->name('user.ban');
     Route::get('users/unban/{id}', 'UserController@unblock')->name('user.unban');
