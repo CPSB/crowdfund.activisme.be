@@ -2,6 +2,25 @@
 
 @section('title', 'Activisme_BE crowdfund')
 
+@push('twitter-cards')
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Activisme_be" />
+    <meta name="twitter:title" content="Activisme_BE Crowdfund voor de werking en Vredes caravan." />
+    <meta name="twitter:description" content="Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis.
+                        Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te.." />
+    <meta name="twitter:image" content="{{ asset('img/banner.jpg') }}" />
+@endpush
+
+@push('open-graph')
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:title" content="Activisme_BE Crowdfund voor de werking en Vredes caravan." />
+    <meta property="og:image" content="{{ asset('img/banner.jpg') }}" />
+    <meta property="og:description" content="Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis.
+                        Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te..">
+    <meta property='article:publisher' content='https://www.facebook.com/ActivismeBE' />
+@endpush
+
 @section('content')
     <div class="row">
         <div class="content col-md-8 col-sm-12 col-xs-12">
@@ -48,7 +67,7 @@
                         Met vermelding: Ik steun activisme.be of Ik steun de vredescaravan
                     </p>
 
-                    <h2>10,350€</h2>
+                    <h2>{{ $backers->sum('amount') }}€</h2>
                     <span class="contribution">
                         opgehaald door <strong>{{ $backers->count() }}</strong>
 
@@ -98,15 +117,14 @@
         <!--sidebar-->
         <div class="content col-md-4 col-sm-12 col-xs-12">
             <div class="section-block summary">
-                <h1 class="section-title">CONTACT</h1>
+                <h1 class="section-title">SOCIAL MEDIA</h1>
                 <div class="profile-contents">
                     <!--social links-->
                     <ul class="list-inline">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-git"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="{{ $share['twitter'] }}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{ $share['facebook'] }}"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://github.com/CPSB/crowdfund.activisme.be" _target="blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="mailto:tom@activisme.be"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -175,6 +175,7 @@ return [
         Spatie\Backup\BackupServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Cog\Ban\Providers\BanServiceProvider::class,
+        Chencha\Share\ShareServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -241,7 +242,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
+        'Share' => Chencha\Share\ShareFacade::class
     ],
 
 ];

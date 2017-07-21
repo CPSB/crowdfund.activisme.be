@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Share;
 use App\Countries;
 use App\Updates;
 use App\Finance;
@@ -44,6 +45,8 @@ class HomeController extends Controller
         $data['backers']  = Finance::where('type', 'inkomsten');
         $data['percent']  = ($data['backers']->sum('amount') / config('platform.needed-money')) * 100;
         $data['daysLeft'] = $this->daysToGo();
+        $data['share']    = Share::load(url('/'), 'Activisme_BE crowdfund')
+            ->services('facebook', 'twitter');
 
         return view('welcome', $data);
     }
