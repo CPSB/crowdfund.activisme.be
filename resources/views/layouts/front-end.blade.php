@@ -40,7 +40,7 @@
                     <h3>{{ $backers->count() }}</h3>
                     
                     @if ($backers->count() === 1)
-                        bijdrage
+                        <span>bijdrage</span>
                     @else
                         <span>bijdrages</span>
                     @endif

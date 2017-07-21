@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Finance
+ *
+ * @package App
+ */
 class Finance extends Model
 {
     /**
@@ -11,12 +16,12 @@ class Finance extends Model
      * 
      * @var array
      */
-    protected $fillable = ['type', 'finance_plan', 'uitvoerder', 'amount', 'creator_id', 'extra_informatie']; 
+    protected $fillable = ['type', 'titel', 'finance_plan', 'uitvoerder', 'amount', 'creator_id', 'extra_informatie'];
 
     /**
-     * Creator transaction relation data. 
+     * Creator transaction relation data.
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function creator()
     {

@@ -63,6 +63,16 @@
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">
+                                Titel transactie: <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="titel" placeholder="Titel v/d transactie.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">
                                 Extra informatie:
                             </label>
 

@@ -16,10 +16,11 @@ class CreateFinancesTable extends Migration
         Schema::create('finances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('creator_id');
-            $table->float('amount');
             $table->string('type');
+            $table->float('amount');
             $table->string('finance_plan');
             $table->string('uitvoerder');
+            $table->string('titel');
             $table->text('extra_informatie');
             $table->timestamps();
         });
