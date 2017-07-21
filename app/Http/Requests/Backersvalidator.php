@@ -13,7 +13,7 @@ class Backersvalidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class Backersvalidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'titel'         => 'required',
+            'type'          => 'required', 
+            'finance_plan'  => 'required', 
+            'uitvoerder'    => 'required',
+            'amount'        => 'required',
         ];
     }
 }

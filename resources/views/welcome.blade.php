@@ -13,19 +13,29 @@
                     <h2>Activisme_BE werking</h2>
 
                     <p>
-                        Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis. Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te strijden voor onze belangen die nu maar al te vaak op de helling worden gezet. Naast zichtbare aanwezigheid op tal van demonstraties, parades en betogingen, organiseren wij zelf ook straatacties en ludieke (protest)acties. De website activisme.be is de plaats bij uitstek waar we ruchtbaarheid kunnen geven aan deze acties, betogingen en demonstraties.
+                        Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis. 
+                        Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te strijden voor onze belangen die nu maar al te vaak op de helling worden gezet.
+                        Naast zichtbare aanwezigheid op tal van demonstraties, parades en betogingen, organiseren wij zelf ook straatacties en ludieke (protest)acties.
+                        De website activisme.be is de plaats bij uitstek waar we ruchtbaarheid kunnen geven aan deze acties, betogingen en demonstraties.
                     </p>
                     <p>
-                        Daarnaast leggen we via activisme.be online petities en petitielijsten aan, die wijds kunnen uitgestuurd worden naar onze achterban. Andere organisaties en bewegingen kunnen gratis gebruik maken van dit platform om petities voor de goede zaak op te stellen en te verspreiden.
+                        Daarnaast leggen we via activisme.be online petities en petitielijsten aan, die wijds kunnen uitgestuurd worden naar onze achterban. 
+                        Andere organisaties en bewegingen kunnen gratis gebruik maken van dit platform om petities voor de goede zaak op te stellen en te verspreiden.
                     </p>
                     <p>
-                        Om dit alles draaiende te houden, de website up to date te houden, de petities op te stellen en de deur uit te krijgen, hebben we jullie hulp nodig. Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift, hoe klein ook, welkom. Deze giften zullen integraal gebruikt worden om ons webteam te ondersteunen, zodat activisme.be langzaamaan kan uitgroeien tot een platform dat gebruikt kan worden om het beleid, de politici en iedereen die meewerkt aan een samenleving waar steeds meer mensen naar de marge worden verwezen, op het matje en tot verantwoording te roepen.
+                        Om dit alles draaiende te houden, de website up to date te houden, de petities op te stellen en de deur uit te krijgen, hebben we jullie hulp nodig. 
+                        Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift, hoe klein ook, welkom. 
+                        Deze giften zullen integraal gebruikt worden om ons webteam te ondersteunen, zodat activisme.be langzaamaan kan uitgroeien tot een platform dat gebruikt kan worden om het beleid, 
+                        de politici en iedereen die meewerkt aan een samenleving waar steeds meer mensen naar de marge worden verwezen, op het matje en tot verantwoording te roepen.
                     </p>
 
                     <h2>Vredes caravan</h2>
 
                     <p>
-                        Recent hebben we een oude caravan aangekocht, die gebruikt zal worden om verscheidene acties mee te doen, zoals kledij, dekens ,soep en voeding te gaan bedelen over het hele land aan de minderbedeelden en daklozen. Daar we de caravan voor verschillende doeleinden zullen gebruiken, zal het interieur ook volledig moeten aangepast worden, zodat deze uit mobiele eenheden bestaan, die gemakkelijk te verplaatsen zijn, volgens het doel dat we uitvoeren. Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift welkom. Het rekeningnummer om ons vrijblijvend te steunen:
+                        Recent hebben we een oude caravan aangekocht, die gebruikt zal worden om verscheidene acties mee te doen, zoals kledij, dekens,
+                        soep en voeding te gaan bedelen over het hele land aan de minderbedeelden en daklozen. Daar we de caravan voor verschillende doeleinden zullen gebruiken, 
+                        zal het interieur ook volledig moeten aangepast worden, zodat deze uit mobiele eenheden bestaan, die gemakkelijk te verplaatsen zijn, volgens het doel dat we uitvoeren. 
+                        Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift welkom. Het rekeningnummer om ons vrijblijvend te steunen:
                     </p>
 
                     <h2>Steun ons:</h2>
@@ -38,16 +48,26 @@
                         Met vermelding: Ik steun activisme.be of Ik steun de vredescaravan
                     </p>
 
-                    <h2>$10,350</h2>
-                    <span class="contribution">raised by <strong>5,234</strong> ready to launch</span>
+                    <h2>10,350€</h2>
+                    <span class="contribution">
+                        opgehaald door <strong>{{ $backers->count() }}</strong>
+
+                        @if ($backers->count() === 1)
+                            persoon
+                        @else
+                            <span>personen</span>
+                        @endif
+                    </span>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                            <span class="sr-only">45% Complete</span>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="{{ config('platform.needed-money') }}" style="width: {{ $percent }}%;">
+                            <span class="sr-only">{{ number_format($percent, 2)}}% Compleet</span>
                         </div>
                     </div>
-                    <span class="goal-progress"><strong>45%</strong> of $23,000 raised</span>
+                    <span class="goal-progress">
+                        <strong>{{ number_format($percent, 2)}}%</strong> opgehaald van de {{ config('platform.needed-money') }}€
+                    </span>
                 </div>
-                <span class="count-down"><strong>27</strong>dagen te gaan.</span>
+                <span class="count-down"><strong>{{ $daysLeft }}</strong>dagen te gaan.</span>
             </div>
             <!--tabs-->
             <div class="section-block">
@@ -84,12 +104,10 @@
                     <ul class="list-inline">
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fa fa-git"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                    <!--/social links-->
-                    <a href="#" class="btn btn-contact"><i class="fa fa-envelope"></i>CONTACT US</a>
                 </div>
             </div>
         </div>

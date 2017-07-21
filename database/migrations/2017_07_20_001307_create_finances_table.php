@@ -15,9 +15,13 @@ class CreateFinancesTable extends Migration
     {
         Schema::create('finances', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('creator_id');
             $table->string('type');
-            $table->string('crowdfund');
-            $table->text('note');
+            $table->float('amount');
+            $table->string('finance_plan');
+            $table->string('uitvoerder');
+            $table->string('titel');
+            $table->text('extra_informatie');
             $table->timestamps();
         });
     }

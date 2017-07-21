@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Countries;
 use App\Updates;
+use App\Finance;
 use Illuminate\Http\Request;
 
 /**
@@ -39,7 +40,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['updates'] = Updates::all();
+        $data['updates']  = Updates::all();
+        $data['backers']  = Finance::where('type', 'inkomsten');
+        $data['percent']  = ($data['backers']->sum('amount') / config('platform.needed-money')) * 100;
+        $data['daysLeft'] = $this->daysToGo();
+
         return view('welcome', $data);
     }
 
@@ -52,5 +57,20 @@ class HomeController extends Controller
     {
         $data['updates'] = Updates::with('author')->paginate(15);
         return view('home', $data);
+    }
+
+
+    /**
+     * get the difference in days. 
+     *
+     * @return int
+     */
+    protected function daysToGo() : int
+    {
+        $start = date_create(date("Y-m-d"));
+        $end   = date_create(config('platform.eind_datum'));
+        $diff  = date_diff($start, $end);
+
+        return $diff->format("%a");
     }
 }
