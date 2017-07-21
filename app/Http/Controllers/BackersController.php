@@ -55,6 +55,17 @@ class BackersController extends Controller
         return view('backers.create');
     }
 
+    public function showTransaction($id)
+    {
+        try {
+            $data['transaction'] = Finance::findOrFail($id); 
+            return view('backers.show', $data);
+        } catch (ModelNotFoundException $exception) {
+            flash('Wij konden de transactie niet vinden in het systeem.')->error();
+            return redirect()->route('backers'); 
+        }
+    }
+
     /**
      * Store a transaction inthe system.
      *
@@ -65,7 +76,8 @@ class BackersController extends Controller
     public function store(Backersvalidator $input, Finance $finance)
     {
         $input->merge([
-            'creator_id' => auth()->user()->id, 'amount' => str_replace(',', '.', $input->amount)
+            'creator_id' => auth()->user()->id, 
+            'amount'     => str_replace(',', '.', $input->amount)
         ]);
 
         if ($finance->create($input->except(['_token']))) { // Transaction has been stored.
