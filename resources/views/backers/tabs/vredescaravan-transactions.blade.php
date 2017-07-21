@@ -20,7 +20,7 @@
                         @endif
                     </td>
 
-                    <td></td>
+                    <td>{{ $transactionCaravan->titel }}</td>
 
                     <td class="pull-right"> {{-- Functions. --}}
                         <a href="{{ route('backers.transaction.show', $transactionCaravan) }}" class="btn btn-info btn-xs">

@@ -5,7 +5,7 @@
         <div class="col-md-9"> {{-- Content --}}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <strong><code>#T{{ $transaction->id }}:</code></strong> Ik ben de titel.
+                    <strong><code>#T{{ $transaction->id }}:</code></strong> {{ ucfirst($transaction->titel) }}
                     <div class="pull-right">{{ $transaction->created_at }}</div>
                 </div>
                 <div class="panel-body"> {{-- Transaction data --}}
