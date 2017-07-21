@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Finance;
 use Illuminate\Http\Request;
 
 /**
