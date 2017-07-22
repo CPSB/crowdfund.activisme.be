@@ -153,7 +153,6 @@ class UserController extends Controller
     public function block($userId)
     {
         try {
-            // TODO: Register route
             $user = $this->users->findOrFail($userId);
 
             if (auth()->user()->can('edit_users') && auth()->user()->can('edit_roles')) {
