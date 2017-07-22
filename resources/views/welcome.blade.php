@@ -99,7 +99,9 @@
                                     <div class="update-post">
                                         <h4 class="update-title">{{ $update->title }}</h4>
                                         <span class="update-date">{{ $update->created_at->diffForHumans() }}</span>
-                                        <p>{{ strip_tags($update->text) }}</p>
+                                        <p>
+                                            {!! str_limit(strip_tags($update->text), 200, '... <a href="">Lees meer</a>') !!}
+                                        </p>
                                     </div>
                                 @endforeach
                             @else

@@ -75,14 +75,17 @@
         @yield('content')
     </div>
 </div>
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <!--This template has been created under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using this template in your own project, thank you.-->
-            <span class="copyright">Alle rechten voorbehouden <a href="http://activisme.be" target="_blank">Activisme_BE</a></span>
+
+@if (! Request::is('updates*'))
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!--This template has been created under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using this template in your own project, thank you.-->
+                <span class="copyright">Alle rechten voorbehouden <a href="http://activisme.be" target="_blank">Activisme_BE</a></span>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
+@endif
 
 <!-- Global jQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

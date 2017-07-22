@@ -40,6 +40,7 @@ Route::get('backers/delete/{id}', 'BackersController@destroy')->name('backers.tr
 
 Route::get('updates/create', 'UpdatesController@create')->name('updates.create');
 Route::get('updates/delete/{id}', 'UpdatesController@destroy')->name('updates.destroy');
+Route::get('updates/show/{id}', 'UpdatesController@show')->name('updates.show');
 Route::get('updates/edit/{id}', 'UpdatesController@edit')->name('updates.edit');
 Route::post('updates/update/{id}', 'UpdatesController@update')->name('updates.update');
 Route::post('updates/store', 'UpdatesController@store')->name('updates.store');

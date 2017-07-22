@@ -8,6 +8,12 @@ p {
 a {
     color: #781508; }
 
+a:hover, a:focus {
+    background-color: #B9210C;
+    text-decoration: none;
+    color: #fff;
+}
+
 .header {
     background-color: #B9210C;
     border-bottom: 5px solid #781508;

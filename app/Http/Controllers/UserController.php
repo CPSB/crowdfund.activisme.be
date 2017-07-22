@@ -216,6 +216,11 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Synchronize the permissions for the given user. 
+     * 
+     * @return \App\User $user 
+     */
     private function syncPermissions(Request $request, $user)
     {
         // Get the submitted roles.
