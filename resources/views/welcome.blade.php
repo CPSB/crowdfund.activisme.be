@@ -88,12 +88,12 @@
                 </div>
                 <span class="count-down"><strong>{{ $daysLeft }}</strong>dagen te gaan.</span>
             </div>
-            <!--tabs-->
+            
             <div class="section-block">
                 <div class="section-tabs">
                     <div class="update-information">
                         <h1 class="section-title">UPDATES</h1>
-                        <!--update items-->
+                        {{-- update items --}}
                             @if ((int) count($updates) > 0)
                                 @foreach($updates as $update)
                                     <div class="update-post">
@@ -110,19 +110,16 @@
                                     Er zijn geen updates voor onze crowdfund.
                                 </div>
                             @endif
-                        <!--/update items-->
+                        {{-- /update items --}}
                     </div>
                 </div>
             </div>
-        </div>
-        <!--/main content-->
-        <!--sidebar-->
-        <div class="content col-md-4 col-sm-12 col-xs-12">
+        </div> {{-- /main content --}}
+        <div class="content col-md-4 col-sm-12 col-xs-12"> {{--sidebar--}}
             <div class="section-block summary">
                 <h1 class="section-title">SOCIAL MEDIA</h1>
                 <div class="profile-contents">
-                    <!--social links-->
-                    <ul class="list-inline">
+                    <ul class="list-inline"> {{--social links --}}
                         <li><a href="{{ $share['twitter'] }}"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="{{ $share['facebook'] }}"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://github.com/CPSB/crowdfund.activisme.be" _target="blank"><i class="fa fa-github"></i></a></li>
@@ -130,7 +127,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <!--/sidebar-->
+        </div>{{--/sidebar--}}
     </div>
 @endsection
