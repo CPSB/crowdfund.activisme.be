@@ -75,14 +75,6 @@
                                     </li>
                                 @endif
                             @endif
-
-                            <li class="{{ Request::is('contact*') ? 'active' : '' }} {{ Request::is('backend/contact*') ? 'active' : '' }}">
-                                @if (auth()->check() && auth()->user()->hasRole('Admin'))
-                                    <a href="{{ route('contact.backend.index') }}"><span class="fa fa-envelope" aira-hidden="true"></span> Contact</a>
-                                @else
-                                    <a href="{{ route('contact.index') }}"><span class="fa fa-envelope" aria-hidden="true"></span> Contact</a>
-                                @endif
-                            </li>
                         </ul>
 
                         {{-- Right Side Of Navbar --}}

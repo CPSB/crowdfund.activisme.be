@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Finance;
 use Illuminate\Http\Request;
 
 /**
@@ -33,6 +34,23 @@ class DisclaimerController extends Controller
      */
     public function index()
     {
-        return view('disclaimer.index');
+        $data['backers']  = Finance::where('type', 'inkomsten');
+        $data['daysLeft'] = $this->daysToGo();
+
+        return view('disclaimer.index', $data);
+    }
+
+    /**
+     * get the difference in days. 
+     *
+     * @return int
+     */
+    protected function daysToGo() : int
+    {
+        $start = date_create(date("Y-m-d"));
+        $end   = date_create(config('platform.eind_datum'));
+        $diff  = date_diff($start, $end);
+
+        return $diff->format("%a");
     }
 }

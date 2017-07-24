@@ -153,7 +153,6 @@ class UserController extends Controller
     public function block($userId)
     {
         try {
-            // TODO: Register route
             $user = $this->users->findOrFail($userId);
 
             if (auth()->user()->can('edit_users') && auth()->user()->can('edit_roles')) {
@@ -216,6 +215,11 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Synchronize the permissions for the given user. 
+     * 
+     * @return \App\User $user 
+     */
     private function syncPermissions(Request $request, $user)
     {
         // Get the submitted roles.

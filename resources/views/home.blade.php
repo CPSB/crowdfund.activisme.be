@@ -6,7 +6,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <span class="fa fa-file-text-o"></span> Updates
-                    <a href="{{ route('updates.create') }}" class="pull-right btn btn-xs btn-default">Nieuwe update</a>
+                    <a href="{{ route('updates.create') }}" class="pull-right btn btn-xs btn-success">
+                        <span class="fa fa-plus" aria-hidden="true"></span> Nieuwe update
+                    </a>
                 </div>
 
                 <div class="panel-body">
@@ -42,9 +44,17 @@
                                         <td>{{ $update->title }}</td>
 
                                         <td class="pull-right">
-                                            <a href="" class="btn btn-xs btn-info">Bekijken</a>
-                                            <a href="{{ route('updates.edit', $update) }}" class="btn btn-xs btn-warning">Wijzig</a>
-                                            <a href="{{ route('updates.destroy', $update) }}" class="btn btn-xs btn-danger">Verwijder</a>
+                                            <a href="{{ route('updates.show', $update) }}" class="btn btn-xs btn-info">
+                                                <span class="fa fa-file-text-o" aria-hidden="true"></span> Bekijken
+                                            </a>
+
+                                            <a href="{{ route('updates.edit', $update) }}" class="btn btn-xs btn-warning">
+                                                <span class="fa fa-pencil" aria-hidden="true"></span> Wijzig
+                                            </a>
+
+                                            <a href="{{ route('updates.destroy', $update) }}" class="btn btn-xs btn-danger">
+                                                <span class="fa fa-trash" aria-hidden="true"></span> Verwijder
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

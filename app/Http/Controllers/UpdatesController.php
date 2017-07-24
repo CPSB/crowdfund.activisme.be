@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Share;
+use App\Updates; 
+use App\Finance;
 use App\Http\Requests\UpdateValidator;
-use App\Updates;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -64,8 +66,19 @@ class UpdatesController extends Controller
     public function show($id)
     {
         try {
-            $data['update'] = Updates::findOrFail($id);
-            return view('updates.show');
+            $data['update']   = Updates::findOrFail($id);
+            $data['backers']  = Finance::where('type', 'inkomsten');
+            $data['daysLeft'] = $this->daysToGo();
+            $data['share']    = Share::load(route('updates.show', $data['update']), 'Activisme_BE crowdfund')
+            ->services('facebook', 'twitter');
+
+            if (auth()->user()->is('Admin') && $data['update']->status == 'draft') {
+                return view('updates.show', $data);
+            } else {
+                return app()->abort(404); 
+            }
+
+            return view('updates.show', $data);
         } catch (ModelNotFoundException $exception) {
             return back(302);
         }
@@ -133,5 +146,19 @@ class UpdatesController extends Controller
             flash('Wij konden de update niet vinden die u probeerdt te verwijderen')->error();
             return redirect()->route('home');
         }
+    }
+
+    /**
+     * get the difference in days. 
+     *
+     * @return int
+     */
+    protected function daysToGo() : int
+    {
+        $start = date_create(date("Y-m-d"));
+        $end   = date_create(config('platform.eind_datum'));
+        $diff  = date_diff($start, $end);
+
+        return $diff->format("%a");
     }
 }
