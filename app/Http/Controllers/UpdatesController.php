@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ActivismeBE\Http\Controllers;
 
 use Share;
-use App\Updates; 
-use App\Finance;
-use App\Http\Requests\UpdateValidator;
+use ActivismeBE\Updates; 
+use ActivismeBE\Finance;
+use ActivismeBE\Http\Requests\UpdateValidator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 /**
  * Class UpdatesController
  *
- * @package App\Http\Controllers
+ * @package ActivismeBE\Http\Controllers
  */
 class UpdatesController extends Controller
 {

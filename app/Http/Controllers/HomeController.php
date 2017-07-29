@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ActivismeBE\Http\Controllers;
 
 use Share;
-use App\Countries;
-use App\Updates;
-use App\Finance;
+use ActivismeBE\Countries;
+use ActivismeBE\Updates;
+use ActivismeBE\Finance;
 use Illuminate\Http\Request;
 
 /**

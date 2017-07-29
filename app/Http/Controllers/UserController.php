@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ActivismeBE\Http\Controllers;
 
-use App\User;
-use App\Role;
-use App\Permission;
-use App\Traits\Authorizable;
+use ActivismeBE\User;
+use ActivismeBE\Role;
+use ActivismeBE\Permission;
+use ActivismeBE\Traits\Authorizable;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -218,7 +218,7 @@ class UserController extends Controller
     /**
      * Synchronize the permissions for the given user. 
      * 
-     * @return \App\User $user 
+     * @return \ActivismeBE\User $user 
      */
     private function syncPermissions(Request $request, $user)
     {

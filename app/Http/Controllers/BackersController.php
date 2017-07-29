@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ActivismeBE\Http\Controllers;
 
-use App\Finance;
-use App\Http\Requests\Backersvalidator;
+use ActivismeBE\Finance;
+use ActivismeBE\Http\Requests\Backersvalidator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 /**
  * BackersController
  *
- * @package App\Http\Controllers
+ * @package ActivismeBE\Http\Controllers
  */
 class BackersController extends Controller
 {
@@ -70,7 +70,7 @@ class BackersController extends Controller
      * Store a transaction inthe system.
      *
      * @param  Backersvalidator $input
-     * @param  \App\Finance      $finance
+     * @param  \ActivismeBE\Finance      $finance
      * @return \Illuminate\Http\Response
      */
     public function store(Backersvalidator $input, Finance $finance)
