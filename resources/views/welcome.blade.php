@@ -44,7 +44,7 @@
                     <p>
                         Om dit alles draaiende te houden, de website up to date te houden, de petities op te stellen en de deur uit te krijgen, hebben we jullie hulp nodig. 
                         Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift, hoe klein ook, welkom. 
-                        Deze giften zullen integraal gebruikt worden om ons webteam te ondersteunen, zodat activisme.be langzaamaan kan uitgroeien tot een platform dat gebruikt kan worden om het beleid, 
+                        Deze giften zullen integraal gebruikt worden om ons webteam te ondersteunen, zodat activisme.be langzaam aan kan uitgroeien tot een platform dat gebruikt kan worden om het beleid,
                         de politici en iedereen die meewerkt aan een samenleving waar steeds meer mensen naar de marge worden verwezen, op het matje en tot verantwoording te roepen.
                     </p>
 
