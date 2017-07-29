@@ -22,13 +22,13 @@
                 </div>
             </div>
         </div>
-        <!--/main content-->
-        <!--sidebar-->
+        {{--/main content--}}
+        {{--sidebar--}}
         <div class="content col-md-4 col-sm-12 col-xs-12">
             <div class="section-block summary">
                 <h1 class="section-title">SOCIAL MEDIA</h1>
                 <div class="profile-contents">
-                    <!--social links-->
+                    {{--social links--}}
                     <ul class="list-inline">
                         <li><a href="{{ $share['twitter'] }}"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="{{ $share['facebook'] }}"><i class="fa fa-facebook"></i></a></li>
@@ -38,6 +38,6 @@
                 </div>
             </div>
         </div>
-        <!--/sidebar-->
+        {{--/sidebar--}}
     </div>
 @endsection
