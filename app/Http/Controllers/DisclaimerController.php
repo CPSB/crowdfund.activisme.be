@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace ActivismeBE\Http\Controllers;
 
-use App\Finance;
+use ActivismeBE\Finance;
 use Illuminate\Http\Request;
 
 /**
