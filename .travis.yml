@@ -1,5 +1,4 @@
 # Travis ci testing file
-# TODO: Refactor
 
 language: php
 
