@@ -44,24 +44,24 @@
                     <h3>{{ $backers->count() }}</h3>
                     
                     @if ($backers->count() === 1)
-                        <span>bijdrage</span>
+                        <span>@lang('layout.supporter-1')</span>
                     @else
-                        <span>bijdrages</span>
+                        <span>@lang('layout.supporter-2')</span>
                     @endif
                 </div>
                 <div class="funded">
                     <h3>{{ $backers->sum('amount') }}€</h3>
-                    <span>opgehaald van de {{ config('platform.needed-money') }}€</span>
+                    <span>@lang('layout.get-sentence', ['amount' =>  config('platform.needed-money')])</span>
                 </div>
                 <div class="time-left">
                     <h3>{{ $daysLeft }}</h3>
-                    <span>dagen te gaan</span>
+                    <span>@lang('layout.days-left')</span>
                 </div>
                 <div class="reminder last">
                     @if (Request::is('disclaimer*'))
-                        <a href="{{ route('index') }}"><i class="fa fa-home"></i> Home</a>
+                        <a href="{{ route('index') }}"><i class="fa fa-home"></i> @lang('layout.button-home')</a>
                     @else
-                        <a href="{{ route('disclaimer.index') }}"><i class="fa fa-legal"></i> Disclaimer</a>
+                        <a href="{{ route('disclaimer.index') }}"><i class="fa fa-legal"></i> @lang('layout.button-disclaimer')</a>
                     @endif
                 </div>
             </div>
@@ -78,8 +78,11 @@
 @if (! Request::is('updates*'))
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <span class="copyright">Alle rechten voorbehouden <a href="http://activisme.be" target="_blank">Activisme_BE</a></span>
+            <div class="row">>
+                <span class="copyright">
+                    @lang('layout.footer') <a href="http://activisme.be" target="_blank">Activisme_BE</a>|
+                    <a href="{{ route('language.index') }}">@lang('layout.choose-language')</a>
+                </span>
             </div>
         </div>
     </footer>

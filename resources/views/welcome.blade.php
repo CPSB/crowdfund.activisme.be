@@ -8,14 +8,14 @@
     <meta name="twitter:title" content="Activisme_BE Crowdfund voor de werking en Vredes caravan." />
     <meta name="twitter:description" content="Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis.
                         Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te.." />
-    <meta name="twitter:image" content="{{ asset('img/banner.jpg') }}" />
+    <meta name="twitter:image" content="{{ asset('img/logo.jpg') }}" />
 @endpush
 
 @push('open-graph')
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url('/') }}" />
     <meta property="og:title" content="Activisme_BE Crowdfund voor de werking en Vredes caravan." />
-    <meta property="og:image" content="{{ asset('img/banner.jpg') }}" />
+    <meta property="og:image" content="{{ asset('img/logo.jpg') }}" />
     <meta property="og:description" content="Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis.
                         Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te..">
     <meta property='article:publisher' content='https://www.facebook.com/ActivismeBE' />
