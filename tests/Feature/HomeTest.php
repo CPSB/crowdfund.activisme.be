@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\User;
+use ActivismeBE\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -19,7 +19,9 @@ class HomeTest extends TestCase
 
     public function testHomeBackendView()
     {
-        $user = factory(User::class)->create();
+        // TODO:  Extends to some test with all the possible users.
+
+        $user = $this->createAdmin();
 
         $this->actingAs($user)
             ->seeIsAuthenticatedAs($user)

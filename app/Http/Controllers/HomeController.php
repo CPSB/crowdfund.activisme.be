@@ -30,7 +30,7 @@ class HomeController extends Controller
         $routes = ['backend'];
 
         $this->middleware('banned')->only($routes);
-        $this->middleware('role:Admin')->only($routes);
+        $this->middleware('role:admin')->only($routes);
         $this->middleware('lang');
     }
 
@@ -45,8 +45,7 @@ class HomeController extends Controller
         $data['backers']  = Finance::where('type', 'inkomsten');
         $data['percent']  = ($data['backers']->sum('amount') / config('platform.needed-money')) * 100;
         $data['daysLeft'] = $this->daysToGo();
-        $data['share']    = Share::load(url('/'), 'Activisme_BE crowdfund')
-            ->services('facebook', 'twitter');
+        $data['share']    = Share::load(url('/'), 'Activisme_BE crowdfund')->services('facebook', 'twitter');
 
         return view('welcome', $data);
     }
