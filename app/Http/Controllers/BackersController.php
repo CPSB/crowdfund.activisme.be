@@ -22,7 +22,7 @@ class BackersController extends Controller
     public function __construct()
     {
         $this->middleware('lang');
-        $this->middleware('role:Admin');
+        $this->middleware('role:admin');
         $this->middleware('banned');
     }
 
