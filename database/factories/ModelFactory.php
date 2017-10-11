@@ -22,3 +22,16 @@ $factory->define(ActivismeBE\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(ActivismeBE\Finance::class, function (Faker\Generator $faker) {
+    return [
+        'creator_id'        => function () { return factory(ActivismeBE\User::class)->create()->id; },
+        'type'              => 'onkost',
+        'amount'            => '2.2',
+        'finance_plan'      => 'Activisme',
+        'uitvoerder'        => 'Jan me de pet',
+        'titel'             => 'Bijdrage voor het activisme',
+        'extra_informatie'  => 'gestort wegenarmoede bestrijding'
+    ];
+});
