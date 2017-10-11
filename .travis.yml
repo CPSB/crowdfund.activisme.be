@@ -1,5 +1,4 @@
 # Travis ci testing file
-# TODO: Refactor
 
 language: php
 
@@ -16,7 +15,6 @@ matrix:
 before_script:
     - cp .env.example .env
     - echo "APP_KEY=SmduSUaF1KAAwhRIP6yLHgw0KzebWC6Z" >> .env
-    - echo "DB_CONNECTION=sqlite" >> .env
     - touch database/testing.sqlite
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-source --dev
