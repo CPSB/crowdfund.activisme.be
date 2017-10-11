@@ -53,7 +53,7 @@ class AccountSettingsController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
         ]);
 
-        if (User::findOrFail(auth()->user()->id)->update($request->all())) {
+        if (User::findOrFail(auth()->user()->id)->update($request->except('_token'))) {
             flash(trans('profile-settings.flash-info'))->success();
         }
 
