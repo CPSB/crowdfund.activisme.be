@@ -38,6 +38,8 @@ Route::post('backers/store', 'BackersController@store')->name('backers.transacti
 Route::get('backers/transaction/show/{id}', 'BackersController@showTransaction')->name('backers.transaction.show');
 Route::get('backers/delete/{id}', 'BackersController@destroy')->name('backers.transaction.destroy');
 
+Route::get('language', 'LanguageController@index')->name('language.index');
+
 Route::get('updates/create', 'UpdatesController@create')->name('updates.create');
 Route::get('updates/delete/{id}', 'UpdatesController@destroy')->name('updates.destroy');
 Route::get('updates/show/{id}', 'UpdatesController@show')->name('updates.show');

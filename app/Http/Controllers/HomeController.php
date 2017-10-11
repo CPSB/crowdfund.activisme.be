@@ -37,10 +37,14 @@ class HomeController extends Controller
     /**
      * The application front-page.
      *
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
+        if (session()->get('lang') == null || empty(session()->get('lang'))) {
+            return view('language'); // No language is set so redirect to the language view.
+        }
+
         $data['updates']  = Updates::all();
         $data['backers']  = Finance::where('type', 'inkomsten');
         $data['percent']  = ($data['backers']->sum('amount') / config('platform.needed-money')) * 100;
