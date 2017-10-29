@@ -49,6 +49,17 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="control-label col-md-3">
+                                Verzenden als nieuwsbrief: <span class="text-danger">*</span>
+                            </label>
+
+                            <div class="col-md-9">
+                                <label class="radio-inline"><input type="radio" name="nieuwsbrief" value="yes">Ja</label>
+                                <label class="radio-inline"><input type="radio" name="nieuwsbrief" value="no">Nee</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-offset-3 col-md-9">
                                 <button type="submit" class="btn btn-success">
                                     <span class="fa fa-check" aria-hidden="true"></span> Toevoegen

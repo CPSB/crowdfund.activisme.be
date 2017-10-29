@@ -24,6 +24,8 @@
 @section('content')
     <div class="row">
         <div class="content col-md-8 col-sm-12 col-xs-12">
+            @include('flash::message') {{-- Flash message view instance --}}
+
             <div class="section-block">
                 <div class="funding-meta">
                     <h1>Activisme_BE crowdfund</h1>
@@ -88,7 +90,19 @@
                 </div>
                 <span class="count-down"><strong>{{ $daysLeft }}</strong>dagen te gaan.</span>
             </div>
-            
+            <div class="section-block signup">
+                <div class="sign-up-form">
+                    <form method="POST" action="{{ route('newsletter.store') }}">
+                        {{ csrf_field() }} {{-- CSRF form field protection --}}
+
+                        <p>Als je op de hoogte wilt blijven van onze acties kun je je inschrijven op de nieuwsbrief.</p>
+                        <input class="signup-input" type="text" name="email" placeholder="Email Adress">
+                        <button class="btn btn-signup" type="submit">
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
             <div class="section-block">
                 <div class="section-tabs">
                     <div class="update-information">
