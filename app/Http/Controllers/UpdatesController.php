@@ -2,6 +2,9 @@
 
 namespace ActivismeBE\Http\Controllers;
 
+use ActivismeBE\Mail\NewsletterMail;
+use ActivismeBE\Newsletter;
+use Illuminate\Support\Facades\Mail;
 use Share;
 use ActivismeBE\Updates; 
 use ActivismeBE\Finance;
@@ -50,8 +53,17 @@ class UpdatesController extends Controller
     {
         $input->merge(['author_id' => auth()->user()->id]);
 
-        if (Updates::create($input->except(['_token']))) {
+        if ($update = Updates::create($input->except(['_token']))) {
             flash('De update is opgeslagen in het systeem.')->success();
+
+            if ($input->nieuwsbrief == 'yes' && $input->status == 'public') {
+                // Moet gemaild worden naar gebruikers voor de nieuwsbrief.
+                $users = Newsletter::where('platform', 'crowdfund')->get();
+
+                foreach ($users as $user) {// Loop through the database table.
+                    Mail::to($user->email)->queue(new NewsletterMail($update, $user)); // TODO: build up email.
+                }
+            }
         }
 
         return redirect()->route('home');

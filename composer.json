@@ -14,6 +14,7 @@
         "garygreen/pretty-routes": "^0.0.8",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
+        "laravel/horizon": "^1.0",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.3.0",

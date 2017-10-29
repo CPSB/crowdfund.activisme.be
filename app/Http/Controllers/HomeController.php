@@ -30,7 +30,7 @@ class HomeController extends Controller
         $routes = ['backend'];
 
         $this->middleware('banned')->only($routes);
-        $this->middleware('role:admin')->only($routes);
+        $this->middleware('role:Admin')->only($routes);
         $this->middleware('lang');
     }
 
